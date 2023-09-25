@@ -1,0 +1,21 @@
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    height: 100vh;
+}
+
+.registerPage{
+    margin: auto !important;
+    width: 430px !important; 
+    height: 932px !important;
+    background-color: #e1e1e1;
+    color: #0029BA;
+}
+
+.registerData{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
