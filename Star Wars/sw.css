@@ -1,0 +1,13 @@
+*{
+    margin: 0 !important;
+}
+
+.logo{
+    max-height: 300%;
+}
+
+.character{
+    height: 250px;
+    width: 250px;
+    background-color: red;
+}
