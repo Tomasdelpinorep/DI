@@ -24,13 +24,40 @@
                     <div class="form-group d-flex mt-3">
                         <label for="slugInput">Slug (URL)*</label>
                         <input type="url" class="form-control" id="slugInput">
-                        <button id="slug" type="button" class="btn btn-success generateURL"><i class="fa-solid fa-file"
-                                style="color: #ffffff;"></i></button>
+                        <button id="slugBtn" type="button" class="btn btn-success generateURL"><i
+                                class="fa-solid fa-file" style="color: #ffffff;"></i></button>
                     </div>
 
-                    <div class="form-group mt-3">
-                        <label for="robotCheck">¿Cuánto es 3+4?</label>
-                        <input type="number" class="form-control" id="robotCheck" min="1" >
+                    <div class="container mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="securityCheck" id="op1">
+                            <label class="form-check-label" for="op1">
+                                Rojo
+                            </label>
+                        </div>
+    
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="securityCheck" id="op2"
+                                checked>
+                            <label class="form-check-label" for="op2">
+                                Option 1
+                            </label>
+                        </div>
+    
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="securityCheck" id="op3">
+                            <label class="form-check-label" for="op3">
+                                Option 2
+                            </label>
+                        </div>
+    
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="securityCheck" id="op4"
+                                checked>
+                            <label class="form-check-label" for="op4">
+                                Option 3
+                            </label>
+                        </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary mt-5"> Create</button>
@@ -44,26 +71,7 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <script src="EvInicial.js"></script>
+    <script src="EvInicial.js"></script>
 </body>
 
-
-<!-- <script>
-    $(document).ready(function() {
-        // Attach a submit event handler to the form
-        $("#myForm").submit(function(event) {
-            // Prevent the form from submitting
-            event.preventDefault();
-
-            // Get the value of the textarea with ID "title"
-            var textareaValue = $("#title").val();
-
-            // Do something with the textareaValue
-            console.log("Textarea Value: " + textareaValue);
-
-            // Optionally, you can submit the form programmatically here
-            // $(this).submit(); // Uncomment this line to submit the form
-        });
-    });
-</script> -->
 </html>
