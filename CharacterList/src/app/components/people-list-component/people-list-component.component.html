@@ -1,0 +1,25 @@
+<div class="row">
+    <app-people-item-component *ngFor="let c of characterList" [character]="c"
+    (characterClick)="openCharacterModal(c,characterModal)">
+    </app-people-item-component>
+</div>
+
+<!-- MODAL -->
+<ng-template #characterModal let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">{{selectedCharacter?.name}}</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<ul class="list-group">
+            <li class="list-group-item">Birth Year: {{selectedCharacter?.birth_year}}</li>
+            <li class="list-group-item">Gender: {{selectedCharacter?.gender}}</li>
+            <li class="list-group-item">Skin color: {{selectedCharacter?.skin_color}}</li>
+            <li class="list-group-item">Height: {{selectedCharacter?.height}} cm</li>
+            <li class="list-group-item">Weight: {{selectedCharacter?.mass}} kg</li>
+          </ul>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')">Close</button>
+	</div>
+</ng-template>
