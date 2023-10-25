@@ -1,0 +1,54 @@
+<mat-checkbox class="example-margin" [(ngModel)]="checkColumnId" (change)="checkboxClicked()">ID</mat-checkbox>
+<mat-checkbox class="example-margin" [(ngModel)]="checkColumnName" (change)="checkboxClicked()">Name</mat-checkbox>
+<mat-checkbox class="example-margin" [(ngModel)]="checkColumnSurname"
+  (change)="checkboxClicked()">Last Name</mat-checkbox>
+<mat-checkbox class="example-margin" [(ngModel)]="checkColumnSubjects"
+  (change)="checkboxClicked()">Subjects</mat-checkbox>
+
+<mat-table [dataSource]="studentList">
+  <!-- id Definition -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Definition -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+  </ng-container>
+
+  <!--  Last name Definition -->
+  <ng-container matColumnDef="lastName">
+    <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.lastname}} </mat-cell>
+  </ng-container>
+
+  <!--  Sex Definition -->
+  <ng-container matColumnDef="sex">
+    <mat-header-cell *matHeaderCellDef> Sex </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.sex}} </mat-cell>
+  </ng-container>
+
+  <!--  Age Definition -->
+  <ng-container matColumnDef="age">
+    <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.age}} </mat-cell>
+  </ng-container>
+
+  <!--  Sujects Definition -->
+  <ng-container matColumnDef="subjects">
+    <mat-header-cell *matHeaderCellDef> Subjects </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{getSubjectNames(row.subjects)}} </mat-cell>
+  </ng-container>
+
+  <!--  Paid Definition -->
+  <ng-container matColumnDef="paid">
+    <mat-header-cell *matHeaderCellDef> Paid? </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.paid}} </mat-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="['id', 'name', 'lastName','sex','age','subjects','paid']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['id', 'name', 'lastName','sex','age','subjects','paid']"></mat-row>
+</mat-table>
