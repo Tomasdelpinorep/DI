@@ -1,1 +1,31 @@
-<p *ngFor="let c of cryptoList">{{c.id}}</p>
+<div class="container">
+	<div class="row">
+		<app-crypto-item (click)="openModal(c, content)" *ngFor="let c of cryptoList" [crypto]="c"
+			class="col-3 m-3"></app-crypto-item>
+	</div>
+</div>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">{{selectedCryptoDetails.id}}</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<ul class="list-group list">
+					<li class="list-group-item word-wrap">Rank: {{selectedCryptoDetails.rank}}</li>
+					<li class="list-group-item word-wrap">Symbol: {{selectedCryptoDetails.symbol}}</li>
+					<li class="list-group-item word-wrap">Supply: {{selectedCryptoDetails.supply}}</li>
+					<li class="list-group-item word-wrap">Maximum supply: {{selectedCryptoDetails.maxSupply}}</li>
+					<li class="list-group-item word-wrap">Market cap in USD: {{selectedCryptoDetails.marketCapUsd}}</li>
+					<li class="list-group-item word-wrap">24hr Volume in USD: {{selectedCryptoDetails.volumeUsd24Hr}}</li>
+					<li class="list-group-item word-wrap">Price in USD: {{selectedCryptoDetails.priceUsd}}</li>
+					<li class="list-group-item word-wrap">24hr Price Fluctuation %: {{selectedCryptoDetails.changePercent24Hr}}</li>
+					<li class="list-group-item word-wrap">24hr Vwap: {{selectedCryptoDetails.vwap24Hr}}</li>
+					<li class="list-group-item word-wrap">Explorer: {{selectedCryptoDetails.explorer}}</li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</ng-template>

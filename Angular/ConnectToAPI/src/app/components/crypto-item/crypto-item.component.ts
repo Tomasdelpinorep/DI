@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Crypto } from '../../models/crypto-list.inferface';
 
 @Component({
   selector: 'app-crypto-item',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./crypto-item.component.css']
 })
 export class CryptoItemComponent {
+  @Input() crypto!: Crypto;
 
 }
